@@ -1,12 +1,12 @@
 import type { Atoms } from './data/ingredients'
 
-import airSrc   from './assets/air.png'
-import earthSrc from './assets/earth.png'
-import fireSrc  from './assets/fire.png'
-import morsSrc  from './assets/mors.png'
-import saltSrc  from './assets/salt.png'
-import vitaeSrc from './assets/vitae.png'
-import waterSrc from './assets/water.png'
+import airSrc   from './assets/atoms/air.png'
+import earthSrc from './assets/atoms/earth.png'
+import fireSrc  from './assets/atoms/fire.png'
+import morsSrc  from './assets/atoms/mors.png'
+import saltSrc  from './assets/atoms/salt.png'
+import vitaeSrc from './assets/atoms/vitae.png'
+import waterSrc from './assets/atoms/water.png'
 
 export type SvgAtomsProps = Readonly<{
   atoms: Atoms,

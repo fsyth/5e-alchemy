@@ -1,25 +1,24 @@
 import type { Ingredient } from './data/ingredients'
 
-import SvgAtoms from './SvgAtoms'
-import SvgTextArea from './SvgTextArea'
+import SvgEffectText from './SvgEffectText'
+import SvgNamePlate from './SvgNamePlate'
+import SvgPrepText from './SvgPrepText'
 
 import './IngredientCard.css'
 
-type IngredientCardProps = Readonly<Ingredient>
+export type IngredientCardProps = Readonly<Ingredient>
 
 export default function IngredientCard(props: IngredientCardProps) {
-  const { name, prep, text, cost, give } = props
+  const { name, prep, text, cost, give, art='cauldron.jpg' } = props
 
   return (
-    <svg className="IngredientCard" viewBox="0 0 100 140">
-      <rect className="background" x={0} y={0} width={100} height={140}></rect>
-      <rect className="name-background" x={0} y={2} width={100} height={10}></rect>
-      <rect className="effect-background" x={0} y={75} width={100} height={61}></rect>
-      <SvgTextArea className="name" x={5} y={ 2} width={90} height={10} text={name} />
-      <SvgTextArea className="prep" x={5} y={66} width={90} height={ 8} text={prep} />
-      <SvgTextArea className="text" x={5} y={75} width={90} height={60} text={text} />
-      <SvgAtoms className="cost" atoms={cost} x={ 1} y={2.5} />
-      <SvgAtoms className="give" atoms={give} x={99} y={2.5} alignRight />
+    <svg className="IngredientCard" viewBox="-2.5 -2.5 105 145">
+      <rect className="border" x={-2.5} y={-2.5} width={105} height={145} rx={2.5} fill="#eeeeff" />
+      <rect className="background" x={0} y={0} width={100} height={140} fill="#ffeecc" />
+      <image href={`../src/assets/art/${art}`} x={0} y={8} width={100} height={62} preserveAspectRatio="xMidYMid slice" />
+      <SvgNamePlate name={name} cost={cost} give={give} x={0} y={0} />
+      <SvgEffectText text={text} x={0} y={75} />
+      <SvgPrepText prep={prep} x={0} y={70} />
     </svg>
   )
 }

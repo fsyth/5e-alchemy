@@ -14,6 +14,7 @@ export type Ingredient = {
   text: string, // Long effect text added to the finished alchemy
   cost: Atoms,
   give: Atoms,
+  art?: string
 }
 
 const ingredients: Ingredient[] = [
@@ -88,11 +89,12 @@ const ingredients: Ingredient[] = [
     give: { earth: 2 },
   },
   {
-    name: "Waterlily",
+    name: "Water Lily",
     prep: "Extract the stamens.",
     text: "An affected creature benefits from the positive effects of this alchemy for 1 hour.",
     cost: { water: 2 },
     give: { earth: 1 },
+    art: "water-lily.jpg"
   },
   {
     name: "Blisterwort",

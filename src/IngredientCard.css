@@ -1,22 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
 
 svg.IngredientCard {
-  border-radius: 12px;
-  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
-}
-
-svg.IngredientCard rect.background {
-  fill: #ffddaa;
-
-}
-
-svg.IngredientCard rect.effect-background {
-  fill: #fff0e7;
-}
-
-svg.IngredientCard rect.name-background {
-  /* fill: #221111 */
-  fill: #fff0e7;
+  width: 2.5in;
+  margin: 7px 10px;
 }
 
 svg.IngredientCard .SvgTextArea {
@@ -32,14 +18,16 @@ svg.IngredientCard .SvgTextArea {
 }
 
 svg.IngredientCard .name .SvgTextArea {
-  /* color: white; */
   font-size: 6px;
   font-weight: bold;
+  text-shadow: #e9deac 0.03em 0.03em 0.01em;
 }
 
 svg.IngredientCard .prep .SvgTextArea {
-  /*font-size: 6px;
-  font-family: "Italianno", cursive; */
-  font-size: 4px;
-  font-family: "Quintessential", serif;
+  font-size: 3px;
+}
+
+svg.IngredientCard .SvgScales .SvgTextArea {
+  font-size: 2px;
+  color: white;
 }
