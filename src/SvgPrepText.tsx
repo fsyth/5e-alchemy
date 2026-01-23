@@ -15,7 +15,6 @@ export default function SvgPrepText(props: SvgPrepTextProps) {
       <rect x={0} y={0} width={100} height={4.85} fill="white" />
       <SvgTextArea className="prep" x={0} y={-0.5} width={100} height={5} text={prep} />
       <SvgBar x={0} y={0} width={100} barHeight={0.3} capRadius={0} />
-      <SvgBar x={0} y={5} width={100} barHeight={0.3} capRadius={0.45} />
     </g>
   )
 }

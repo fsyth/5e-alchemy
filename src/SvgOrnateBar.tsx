@@ -20,8 +20,6 @@ export default function SvgOrnateBar(props: SvgOrnateBarProps) {
       <circle cx={0.5 * width + 1.6 * capRadius} cy={y} r={0.6 * capRadius} />
       <circle cx={0.5 * width + 2.56 * capRadius} cy={y} r={0.36 * capRadius} />
       <circle cx={0.5 * width - 2.56 * capRadius} cy={y} r={0.36 * capRadius} />
-      <circle cx={0.36 * capRadius} cy={y} r={0.36 * capRadius} />
-      <circle cx={width - 0.36 * capRadius} cy={y} r={0.36 * capRadius} />
     </g>
   )
 }

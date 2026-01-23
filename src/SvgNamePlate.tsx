@@ -22,7 +22,7 @@ export default function SvgNamePlate(props: SvgNamePlateProps) {
       <rect x={0} y={0} width={100} height={8} fill="#fff0e7" />
       <image href={parchmentSrc} x={0} y={0} width={100} height={8} opacity={0.5} preserveAspectRatio="xMidYMid slice" />
       <SvgScales x={0} y={7} />
-      <SvgTextArea className="name" x={5} y={0} width={90} height={10} text={name} />
+      <SvgTextArea className="name" x={5} y={-0.5} width={90} height={10} text={name} />
       <SvgAtoms className="cost" atoms={cost} x={-0.5} y={0.2} />
       <SvgAtoms className="give" atoms={give} x={100.5} y={0.2} alignRight />
     </g>
