@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Italianno&family=Quintessential&display=swap');
+
+svg.IngredientCard {
+  border-radius: 12px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
+svg.IngredientCard rect.background {
+  fill: #ffddaa;
+
+}
+
+svg.IngredientCard rect.effect-background {
+  fill: #fff0e7;
+}
+
+svg.IngredientCard rect.name-background {
+  /* fill: #221111 */
+  fill: #fff0e7;
+}
+
+svg.IngredientCard .SvgTextArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: black;
+  font-size: 5px;
+  font-family: "Quintessential", serif;
+}
+
+svg.IngredientCard .name .SvgTextArea {
+  /* color: white; */
+  font-size: 6px;
+  font-weight: bold;
+}
+
+svg.IngredientCard .prep .SvgTextArea {
+  /*font-size: 6px;
+  font-family: "Italianno", cursive; */
+  font-size: 4px;
+  font-family: "Quintessential", serif;
+}
