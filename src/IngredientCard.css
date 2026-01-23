@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Quintessential&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Quintessential&display=swap');
 
 svg.IngredientCard {
   width: 2.5in;
@@ -30,4 +30,8 @@ svg.IngredientCard .prep .SvgTextArea {
 svg.IngredientCard .SvgScales .SvgTextArea {
   font-size: 2.25px;
   color: white;
+}
+
+svg.IngredientCard .text .SvgTextArea {
+  font-family: Alegreya, serif;
 }

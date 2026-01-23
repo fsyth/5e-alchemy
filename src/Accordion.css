@@ -1,0 +1,56 @@
+.Accordion {
+  border: 1px solid #111;
+  border-radius: 6px;
+  overflow: hidden;
+  max-width: 1020px;
+  margin: auto;
+  background: #111;
+}
+
+/* Header */
+.AccordionHeader {
+  cursor: pointer;
+  user-select: none;
+  padding: 0.75rem 1rem;
+  background: #234;
+  transition: background-color 0.2s ease;
+}
+
+.AccordionHeader:hover {
+  background: #68a;
+}
+
+.AccordionHeader h2 {
+  margin: 0;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Marker (arrow) */
+.AccordionMarker {
+  font-size: 0.9em;
+  width: 1em;
+  display: inline-block;
+}
+
+/* Body */
+.AccordionBody {
+  padding: 0 1rem;
+  max-height: 90vh;
+  overflow: scroll;
+  transition:
+    max-height 0.25s ease,
+    opacity 0.2s ease,
+    padding 0.2s ease;
+  opacity: 1;
+}
+
+/* Collapsed state */
+.AccordionBody.hidden {
+  max-height: 0;
+  opacity: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+}

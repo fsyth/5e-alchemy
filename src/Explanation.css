@@ -1,0 +1,11 @@
+.Explanation {
+  width: 100%;
+  max-width: 750px;
+  margin: auto;
+  text-align: left;
+}
+
+.Explanation img {
+  width: 100%;
+  max-width: 750px;
+}
