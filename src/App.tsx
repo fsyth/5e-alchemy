@@ -1,20 +1,23 @@
-import ingredients from './data/ingredients'
+import Accordion from './Accordion'
+import Explanation from './Explanation'
 import IngredientCard from './IngredientCard'
 
+import ingredients from './data/ingredients'
+
 import './App.css'
-import Explanation from './Explanation'
-import Accordion from './Accordion'
 
 function App() {
   return (
     <div className="App">
       <h1>5e Alchemy</h1>
-      <Accordion heading="Explanation" defaultExpanded>
+      <Accordion heading="Explanation">
         <Explanation />
       </Accordion>
-      {ingredients.map(ingredient =>
-        <IngredientCard key={ingredient.name} {...ingredient} />
-      )}
+      <Accordion heading="All Ingredients">
+        {ingredients.map(ingredient =>
+          <IngredientCard key={ingredient.name} {...ingredient} />
+        )}
+      </Accordion>
     </div>
   )
 }
