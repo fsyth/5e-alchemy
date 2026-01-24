@@ -6,13 +6,17 @@ import SvgPrepText from './SvgPrepText'
 
 import './IngredientCard.css'
 
-export type IngredientCardProps = Readonly<Ingredient>
+export type IngredientCardProps = Readonly<{
+  ingredient: Ingredient
+  onClick?: (ingredient: Ingredient) => void
+}>
 
 export default function IngredientCard(props: IngredientCardProps) {
-  const { name, prep, text, cost, give, art='cauldron.jpg' } = props
+  const { ingredient, onClick } = props
+  const { name, prep, text, cost, give, art='cauldron.jpg' } = ingredient
 
   return (
-    <svg className="IngredientCard" viewBox="-2.5 -2.5 105 145">
+    <svg className="IngredientCard" viewBox="-2.5 -2.5 105 145" onClick={() => onClick?.(ingredient)}>
       <rect className="border" x={-2.5} y={-2.5} width={105} height={145} rx={2.5} fill="#eeeeff" />
       <rect className="background" x={0} y={0} width={100} height={140} fill="#ffeecc" />
       <image href={`../src/assets/art/${art}`} x={0} y={8} width={100} height={62} preserveAspectRatio="xMidYMid slice" />

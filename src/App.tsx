@@ -1,4 +1,5 @@
 import Accordion from './Accordion'
+import Brewing from './Brewing'
 import Explanation from './Explanation'
 import IngredientCard from './IngredientCard'
 
@@ -13,9 +14,12 @@ function App() {
       <Accordion heading="Explanation">
         <Explanation />
       </Accordion>
+      <Accordion heading="Let’s Brew!">
+        <Brewing />
+      </Accordion>
       <Accordion heading="All Ingredients">
         {ingredients.map(ingredient =>
-          <IngredientCard key={ingredient.name} {...ingredient} />
+          <IngredientCard key={ingredient.name} ingredient={ingredient} />
         )}
       </Accordion>
     </div>

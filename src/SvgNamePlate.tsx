@@ -8,8 +8,8 @@ import SvgScales from "./SvgScales"
 
 export type SvgNamePlateProps = Readonly<{
   name: string,
-  cost: Atoms,
-  give: Atoms,
+  cost: Partial<Atoms>,
+  give: Partial<Atoms>,
   x: number,
   y: number,
 }>

@@ -13,12 +13,12 @@ export default function Explanation() {
       <h2>Brewing Rules</h2>
       <p>Any invalid mixture results in the alchemy fizzling into a puff of smoke or a fizzle or a sludge: something inert and a waste of time and ingredients. Failure to meet any of the following conditions will make the alchemy invalid:</p>
       <ul>
+        <li>Bases can only appear at the start.</li>
         <li>You must be able to pay the element cost of an ingredient before adding it.</li>
         <li>All provided elements must be consumed by the end of the brew.</li>
-        <li>Bases can only appear at the start.</li>
         <li>Ingredients cannot be repeated.</li>
-        <li>Fire is unstable, so all outstanding fire has to be consumed immediately by the next ingredient.</li>
-        <li>Mors is also unstable in a different way. If you have any mors, your next ingredient must consume some mors.</li>
+        <li>Fire is unstable, so <i>all</i> outstanding fire has to be consumed immediately by the next ingredient.</li>
+        <li>Mors is volatile. If you have any mors, your next ingredient must consume some mors.</li>
       </ul>
     </div>
   )

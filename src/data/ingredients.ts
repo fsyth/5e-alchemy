@@ -1,4 +1,4 @@
-export type Atoms = Partial<{
+export type Atoms = {
   water: number,
   fire:  number,
   earth: number,
@@ -6,14 +6,14 @@ export type Atoms = Partial<{
   vitae: number,
   mors:  number,
   salt:  number,
-}>
+}
 
 export type Ingredient = {
   name: string, // Name of the ingredient, used as a card title
   prep: string, // Short flavour text for preparing the ingredient in alchemy
   text: string, // Long effect text added to the finished alchemy
-  cost: Atoms,
-  give: Atoms,
+  cost: Partial<Atoms>,
+  give: Partial<Atoms>,
   art?: string
 }
 

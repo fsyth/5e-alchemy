@@ -9,7 +9,7 @@ import vitaeSrc from './assets/atoms/vitae.png'
 import waterSrc from './assets/atoms/water.png'
 
 export type SvgAtomsProps = Readonly<{
-  atoms: Atoms,
+  atoms: Partial<Atoms>,
   className?: string,
   imageSize?: number,
   stride?: number,
