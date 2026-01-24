@@ -158,6 +158,13 @@ const ingredients: Ingredient[] = [
     cost: { water: 2 },
     give: {},
   },
+  {
+    name: "Lunar Moth Wing",
+    prep: "Be careful not to lose the dust.",
+    text: "An affected creature becomes invisible until they attack or cast a spell, for up to 1 minute.",
+    cost: { water: 2 },
+    give: {},
+  },
   // Fire terminals
   {
     name: "Eye of Newt",
@@ -226,7 +233,28 @@ const ingredients: Ingredient[] = [
   {
     name: "Stamella Shroom",
     prep: "Slice the mushroom thinly.",
-    text: "An affected creature gains a +1 bonus to Athletics and Acrobatics checks.",
+    text: "An affected creature gains a +2 bonus to Athletics and Acrobatics checks.",
+    cost: { earth: 1 },
+    give: {},
+  },
+  {
+    name: "Sausages",
+    prep: "Snip with scissors.",
+    text: "An affected creature gains a +2 bonus to Animal Handling and Survival checks.",
+    cost: { earth: 1 },
+    give: {},
+  },
+  {
+    name: "Broken Femur",
+    prep: "Crack to expose the marrow.",
+    text: "An affected creature gains a +2 bonus to Performance and Persuasion checks.",
+    cost: { earth: 1 },
+    give: {},
+  },
+  {
+    name: "Purple Carrot",
+    prep: "Dice finely.",
+    text: "An affected creature gains a +2 bonus to Arcana and Perception checks.",
     cost: { earth: 1 },
     give: {},
   },
@@ -612,7 +640,7 @@ const ingredients: Ingredient[] = [
   {
     name: "Scotch Bonnet",
     prep: "Cut in half lengthwise.",
-    text: "For one minute, an affected creature gains the ability to spew magical energy from its mouth as an action. Target creatures in a 15 foot cone in front of it must make a DC13 Dexterity saving throw.",
+    text: "For 1 minute, an affected creature gains the ability to spew magical energy from its mouth as an action. Target creatures in a 15 foot cone in front of it must make a DC13 Dexterity saving throw.",
     cost: { water: 1 },
     give: { fire: 1 },
   },
