@@ -29,9 +29,23 @@ const ingredients: Ingredient[] = [
   {
     name: "Crushed Opal",
     prep: "Chisel pieces into a vessel.",
-    text: "This potion flask can be thrown up to 30 feet, shattering on impact. Creatures within 5 feet of the impact are affected.",
+    text: "This potion flask can be thrown up to 30 feet as an action, shattering on impact. Creatures within 5 feet of the impact are affected.",
     cost: {},
     give: { water: 1 },
+  },
+  {
+    name: "Lye",
+    prep: "Warm until steaming.",
+    text: "This small bottle contains one dose of a potion that can be drunk as a bonus action by a creature. The drinker takes 1d6 poison damage.",
+    cost: {},
+    give: { water: 1 },
+  },
+  {
+    name: "Clam Water",
+    prep: "Open twenty clams worth.",
+    text: "This small bottle contains one dose of a potion that can be drunk as an action by a creature.",
+    cost: {},
+    give: { water: 2 },
   },
   // Fire bases
   {
@@ -56,6 +70,13 @@ const ingredients: Ingredient[] = [
     text: "This enchanted gem has magical properties when it is attuned to by a creature.",
     cost: {},
     give: { earth: 1 },
+  },
+  {
+    name: "Flawless Ruby",
+    prep: "Submerge the stone in a cauldron.",
+    text: "This enchanted gem has magical properties when it is attuned to by a creature.",
+    cost: {},
+    give: { earth: 2 },
   },
   // Air bases
   {
@@ -89,6 +110,34 @@ const ingredients: Ingredient[] = [
     give: {},
   },
   {
+    name: "Mint Leaf",
+    prep: "Crush to release the oils.",
+    text: "An affected creature gains advantage on its next ability check made before the end of its next turn.",
+    cost: { water: 1 },
+    give: {},
+  },
+  {
+    name: "Soapwort Root",
+    prep: "Lather in warm liquid.",
+    text: "An affected creature ends the grappled or restrained condition affecting it.",
+    cost: { water: 1 },
+    give: {},
+  },
+  {
+    name: "Bonhogan Whiskey",
+    prep: "One generous measure.",
+    text: "An affected creature had advantage on saves against being charmed or frightened for one hour.",
+    cost: { water: 1 },
+    give: {},
+  },
+  {
+    name: "Sea Cucumber",
+    prep: "Mashed, keep pulp.",
+    text: "An affected creature has disadvantage on its next saving throw.",
+    cost: { water: 1 },
+    give: {},
+  },
+  {
     name: "Holy Water",
     prep: "Sprinkle a little.",
     text: "An affected creature becomes under the effect of the spell _bless_ for 1 minute.",
@@ -102,12 +151,40 @@ const ingredients: Ingredient[] = [
     cost: { water: 2 },
     give: {},
   },
+  {
+    name: "Copper Wire",
+    prep: "Coil a medium strand.",
+    text: "An affected creature teleports up to 30 feet to an unoccupied space of its choosing.",
+    cost: { water: 2 },
+    give: {},
+  },
   // Fire terminals
   {
     name: "Eye of Newt",
     prep: "Drop from a height.",
     text: "On a failed save, a creature takes 1d12 poison damage.",
     cost: { fire: 1 },
+    give: {},
+  },
+  {
+    name: "Dwarven Ale",
+    prep: "Pour slowly against the side.",
+    text: "On a failed save, a creature is blinded until the end of its next turn.",
+    cost: { fire: 1 },
+    give: {},
+  },
+  {
+    name: "Pitch Resin",
+    prep: "Warm until tacky.",
+    text: "On a failed save, a creature’s speed is reduced to 0 until the end of its next turn.",
+    cost: { fire: 1 },
+    give: {},
+  },
+  {
+    name: "Cockroach",
+    prep: "Snap cleanly in half.",
+    text: "On a failed save, a creature has disadvantage on attack rolls until the end of its next turn.",
+    cost: { fire: 2 },
     give: {},
   },
   {
@@ -131,11 +208,46 @@ const ingredients: Ingredient[] = [
     cost: { fire: 2 },
     give: {},
   },
+  {
+    name: "Mithan Marmalade",
+    prep: "Dollop a heaped tablespoon.",
+    text: "On a failed save, a creature begins burning, taking 1d6 fire damage at the start of each of its turns for 1 minute. The creature can end this effect early by using an action to extinguish the flames.",
+    cost: { fire: 2 },
+    give: {},
+  },
+  {
+    name: "Demon Heart",
+    prep: "Quench in blood.",
+    text: "On a failed save, a creature takes 6d6 fire damage. If this damage reduces the creature to 0 hit points, its body is reduced to ash.",
+    cost: { fire: 3 },
+    give: {}
+  },
   // Earth terminals
   {
     name: "Stamella Shroom",
     prep: "Slice the mushroom thinly.",
     text: "An affected creature gains a +1 bonus to Athletics and Acrobatics checks.",
+    cost: { earth: 1 },
+    give: {},
+  },
+  {
+    name: "Basalt Scale",
+    prep: "Heat until it cracks.",
+    text: "An affected creature cannot be knocked prone.",
+    cost: { earth: 1 },
+    give: {},
+  },
+  {
+    name: "Razor Blade",
+    prep: "Stir mixture furiously.",
+    text: "An affected creature ignores difficult terrain.",
+    cost: { earth: 1 },
+    give: {},
+  },
+  {
+    name: "Horsefly",
+    prep: "Squish and drop.",
+    text: "An affected creature has a climbing speed of 20 feet.",
     cost: { earth: 1 },
     give: {},
   },
@@ -147,9 +259,51 @@ const ingredients: Ingredient[] = [
     give: {},
   },
   {
+    name: "Axolotl Gills",
+    prep: "Slice cleanly.",
+    text: "An affected creature can breathe underwater.",
+    cost: { earth: 1 },
+    give: {},
+  },
+  {
     name: "Ironcap Shroom",
     prep: "Slice the mushroom thinly.",
     text: "An affected creature gains a +2 bonus to AC.",
+    cost: { earth: 2 },
+    give: {},
+  },
+  {
+    name: "Granite Dust",
+    prep: "Grind until uniform.",
+    text: "An affected creature gains resistance to nonmagical bludgeoning damage.",
+    cost: { earth: 2 },
+    give: {},
+  },
+  {
+    name: "Red Dragonscale",
+    prep: "Place shiny side up.",
+    text: "An affected creature gains resistance to fire damage.",
+    cost: { earth: 2 },
+    give: {},
+  },
+  {
+    name: "Quartz Crystal",
+    prep: "Shatter by throwing.",
+    text: "An affected creature gains resistance to lightning damage.",
+    cost: { earth: 2 },
+    give: {},
+  },
+  {
+    name: "Runed Pebble",
+    prep: "Etch a single sigil.",
+    text: "An affected creature gains a +2 bonus to Wisdom saving throws.",
+    cost: { earth: 2 },
+    give: {},
+  },
+  {
+    name: "Lead Pellets",
+    prep: "Heat until molten.",
+    text: "An affected creature cannot be moved against its will.",
     cost: { earth: 2 },
     give: {},
   },
@@ -176,6 +330,27 @@ const ingredients: Ingredient[] = [
     give: {},
   },
   {
+    name: "Bat Wing",
+    prep: "Dry and crumble.",
+    text: "Whispered sounds within the affected area are amplified, allowing creatures to hear clearly throughout the area for 10 minutes.",
+    cost: { air: 1 },
+    give: {},
+  },
+  {
+    name: "Cricket Leg",
+    prep: "Straighten before dropping.",
+    text: "Creatures in the affected area have disadvantage on Dexterity (Stealth) checks for 10 minutes.",
+    cost: { air: 1 },
+    give: {},
+  },
+  {
+    name: "Mirrored Shard",
+    prep: "Angle carefully.",
+    text: "Illusions appear within the affected area, creating visual duplicates of terrain and objects for 1 minute.",
+    cost: { air: 2 },
+    give: {},
+  },
+  {
     name: "Powdered Ooze",
     prep: "Break up any clumps.",
     text: "A hostile gelatinous cube is conjured, entirely filling the affected area.",
@@ -187,6 +362,13 @@ const ingredients: Ingredient[] = [
     name: "Sheaf of Wheat",
     prep: "Twist off the grains.",
     text: "An affected creature regains 2d4+2 hit points.",
+    cost: { vitae: 1 },
+    give: {},
+  },
+  {
+    name: "Death Flower",
+    prep: "Dissolve completely.",
+    text: "An affected creature immediately stabilizes and regains consciousness if it was at 0 hit points.",
     cost: { vitae: 1 },
     give: {},
   },
@@ -204,6 +386,13 @@ const ingredients: Ingredient[] = [
     cost: { vitae: 2 },
     give: {},
   },
+  {
+    name: "Phoenix Ash",
+    prep: "Blow gently across the surface.",
+    text: "An affected creature regains hit points equal to its proficiency bonus at the start of each of its turns for 1 minute.",
+    cost: { vitae: 2 },
+    give: {},
+  },
   // Mors terminals
   {
     name: "Brimstone",
@@ -213,10 +402,38 @@ const ingredients: Ingredient[] = [
     give: {},
   },
   {
+    name: "Grave Soil",
+    prep: "Pack tightly.",
+    text: "An affected creature takes 1d4 necrotic damage.",
+    cost: { mors: 1 },
+    give: {},
+  },
+  {
+    name: "Doomsday Poppy",
+    prep: "Shake the seeds from one head.",
+    text: "An affected creature has disadvantage on its next saving throw.",
+    cost: { mors: 1 },
+    give: {},
+  },
+  {
     name: "Brass Sheeting",
     prep: "Twist and bend.",
     text: "An affected creature is knocked prone and becomes deafened for 1 minute.",
     cost: { mors: 1 },
+    give: {},
+  },
+  {
+    name: "Rust Flakes",
+    prep: "Scrape from old metal.",
+    text: "An affected creature’s AC is reduced by 1 until the end of its next turn.",
+    cost: { mors: 1 },
+    give: {},
+  },
+  {
+    name: "Widow’s Tear",
+    prep: "Contemplate loss.",
+    text: "An affected creature takes 2d6 psychic damage.",
+    cost: { mors: 2 },
     give: {},
   },
   // Salt terminals
@@ -228,9 +445,37 @@ const ingredients: Ingredient[] = [
     give: {},
   },
   {
-    name: "Shard of glass",
+    name: "Shard of Glass",
     prep: "Be careful not to cut yourself.",
     text: "[Replace all occurences of a damage type with a different one.]",
+    cost: { salt: 1 },
+    give: {},
+  },
+  {
+    name: "Chain",
+    prep: "Break off a link.",
+    text: "[Also apply the effect to another creature within 20 feet.]",
+    cost: { salt: 1 },
+    give: {},
+  },
+  {
+    name: "Alchemically Conductive Oil",
+    prep: "Avoid prolonged air exposure.",
+    text: "[Increase all saving throw DCs in this alchemy by 2.]",
+    cost: { salt: 1 },
+    give: {},
+  },
+  {
+    name: "Alchemist’s Chalk",
+    prep: "Mark a circle.",
+    text: "[If the alchemy affects an area, increase its size by 5 feet.]",
+    cost: { salt: 1 },
+    give: {},
+  },
+  {
+    name: "White Powder",
+    prep: "Sprinkle down the forearm.",
+    text: "[This alchemy is highly addictive.]",
     cost: { salt: 1 },
     give: {},
   },
@@ -258,6 +503,20 @@ const ingredients: Ingredient[] = [
   },
   // Ramps
   {
+    name: "Distilled Spirits",
+    prep: "Skim impurities from the surface.",
+    text: "—",
+    cost: { water: 1 },
+    give: { water: 2 },
+  },
+  {
+    name: "Turbid Slurry",
+    prep: "Stir vigorously.",
+    text: "The action required to use this alchemy also ends the affected creature’s movement for the turn.",
+    cost: { water: 1 },
+    give: { water: 3 },
+  },
+  {
     name: "Saltpetre",
     prep: "Add gingerely.",
     text: "—",
@@ -265,11 +524,53 @@ const ingredients: Ingredient[] = [
     give: { fire: 2 },
   },
   {
+    name: "Niter Crystals",
+    prep: "Add all at once.",
+    text: "—",
+    cost: { fire: 2 },
+    give: { fire: 3 },
+  },
+  {
     name: "Ashes of a Loved One",
     prep: "Try not to lose any.",
     text: "—",
     cost: { earth: 1 },
     give: { earth: 2 },
+  },
+  {
+    name: "Obsidian Shard",
+    prep: "Score the surface.",
+    text: "Any positive effects granted by this alchemy end if the affected creature is reduced to 0 hit points.",
+    cost: { earth: 1 },
+    give: { earth: 3 },
+  },
+  {
+    name: "Bellows Lung",
+    prep: "Compress fully before adding.",
+    text: "—",
+    cost: { air: 1 },
+    give: { air: 2 },
+  },
+  {
+    name: "Leech Cluster",
+    prep: "Allow them to attach.",
+    text: "The creature using this alchemy gains one level of exhaustion when the alchemy’s effects end.",
+    cost: { vitae: 1 },
+    give: { vitae: 3 },
+  },
+  {
+    name: "Live Rat",
+    prep: "Snap at the neck.",
+    text: "—",
+    cost: { mors: 1 },
+    give: { mors: 2 },
+  },
+  {
+    name: "Pearl Necklace",
+    prep: "Count each bead aloud.",
+    text: "—",
+    cost: { salt: 1 },
+    give: { salt: 2 },
   },
   // Water adaptors
   {
@@ -327,7 +628,7 @@ const ingredients: Ingredient[] = [
     prep: "Crush one teaspoon.",
     text: "—",
     cost: { water: 1 },
-    give: { salt: 1 },
+    give: { water: 1, salt: 1 },
   },
   // Fire adaptors
   {
@@ -343,6 +644,13 @@ const ingredients: Ingredient[] = [
     text: "On a failed save, a creature is enveloped in a 10 radius sphere of mist that affects the area within.",
     cost: { fire: 1 },
     give: { air: 1 },
+  },
+  {
+    name: "Giant Sweat",
+    prep: "Empty one vial.",
+    text: "—",
+    cost: { fire: 1 },
+    give: { fire: 1, salt: 1 },
   },
   // Earth adaptors
   {
@@ -366,6 +674,13 @@ const ingredients: Ingredient[] = [
     cost: { earth: 1 },
     give: { mors: 1 },
   },
+  {
+    name: "Petrified Wood",
+    prep: "Allow to soak.",
+    text: "—",
+    cost: { earth: 1 },
+    give: { earth: 1, salt: 1 },
+  },
   // Air adaptors
   {
     name: "Pixie Dust",
@@ -380,6 +695,13 @@ const ingredients: Ingredient[] = [
     text: "Creatures in the affected area must make a DC11 Wisdom saving throw.",
     cost: { air: 1 },
     give: { fire: 1 },
+  },
+  {
+    name: "Jar of Sea Breeze",
+    prep: "—",
+    text: "Creatures in the affected area must make a DC11 Wisdom saving throw.",
+    cost: { air: 1 },
+    give: { air: 1, salt: 1 },
   },
   // Mors adaptors
   {
