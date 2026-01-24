@@ -88,6 +88,20 @@ export default function Brewing() {
     setSelectedIngredients([])
   }
 
+  const copyToClipboard = () => {
+    const ingredientList = selectedIngredients
+      .map(ingredient => ingredient.name)
+      .join('\n')
+
+    const effectList = selectedIngredients
+      .map(ingredient => ingredient.text)
+      .filter(text => text !== '—')
+      .join('\n')
+
+    const toCopy = `Ingredients\n\n${ingredientList}\n\n\nAlchemy Effect\n\n${effectList}`
+    navigator.clipboard.writeText(toCopy)
+  }
+
   return (
     <div className="Brewing">
       <h2>Selected Ingredients</h2>
@@ -104,6 +118,7 @@ export default function Brewing() {
           <>
             <button onClick={popIngredient}>Undo</button>
             <button onClick={clearIngredients}>Clear</button>
+            <button onClick={copyToClipboard}>Copy to clipboard</button>
           </>
         }
         <h3>
