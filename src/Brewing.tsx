@@ -84,6 +84,10 @@ export default function Brewing() {
     setSelectedIngredients(selectedIngredients.slice(0, -1))
   }
 
+  const clearIngredients = () => {
+    setSelectedIngredients([])
+  }
+
   return (
     <div className="Brewing">
       <h2>Selected Ingredients</h2>
@@ -97,7 +101,10 @@ export default function Brewing() {
       </div>
       <div>
         {selectedIngredients.length > 0 &&
-          <button onClick={popIngredient}>Undo</button>
+          <>
+            <button onClick={popIngredient}>Undo</button>
+            <button onClick={clearIngredients}>Clear</button>
+          </>
         }
         <h3>
           <svg viewBox='0 0 50 10' height={32}>
