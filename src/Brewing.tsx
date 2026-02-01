@@ -1,9 +1,10 @@
 import { useState } from 'react'
 
-import type { Atoms, Ingredient } from './data/ingredients'
-import ingredients from './data/ingredients'
 import IngredientCard from './IngredientCard'
 import SvgAtoms from './SvgAtoms'
+
+import type { Atoms, Ingredient } from './data/ingredients'
+import ingredients from './data/ingredients'
 
 function isBaseIngredient(ingredient: Ingredient) {
   return (
@@ -29,6 +30,18 @@ function canAffordIngredient(availableAtoms: Atoms, ingredient: Ingredient) {
   )
 }
 
+function countAtoms(atoms: Atoms) {
+  return (
+    atoms.water +
+    atoms.fire +
+    atoms.earth +
+    atoms.air +
+    atoms.vitae +
+    atoms.mors +
+    atoms.salt
+  )
+}
+
 export default function Brewing() {
   const [selectedIngredients, setSelectedIngredients] = useState<Ingredient[]>([])
 
@@ -42,7 +55,7 @@ export default function Brewing() {
       salt:  0,
   }
 
-  for (let ingredient of selectedIngredients) {
+  for (const ingredient of selectedIngredients) {
     availableAtoms.water += (ingredient.give.water ?? 0) - (ingredient.cost.water ?? 0)
     availableAtoms.fire  += (ingredient.give.fire  ?? 0) - (ingredient.cost.fire  ?? 0)
     availableAtoms.earth += (ingredient.give.earth ?? 0) - (ingredient.cost.earth ?? 0)
@@ -122,8 +135,8 @@ export default function Brewing() {
           </>
         }
         <h3>
-          <svg viewBox='0 0 50 10' height={32}>
-            <SvgAtoms atoms={availableAtoms} />
+          <svg viewBox={`0 0 ${countAtoms(availableAtoms)} 1`} height={32} >
+            <SvgAtoms atoms={availableAtoms} imageSize={1.14} stride={1} />
           </svg>
         </h3>
       </div>

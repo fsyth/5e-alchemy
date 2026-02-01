@@ -38,7 +38,7 @@
 /* Body */
 .AccordionBody {
   padding: 0 1rem;
-  overflow: scroll;
+  overflow: auto;
   transition:
     max-height 0.25s ease,
     opacity 0.2s ease,

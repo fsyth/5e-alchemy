@@ -1,3 +1,5 @@
+import SvgAtoms from './SvgAtoms'
+
 import periodicTableSrc from './assets/images/periodic-table.png'
 
 import './Explanation.css'
@@ -20,6 +22,9 @@ export default function Explanation() {
         <li>Fire is unstable, so <i>all</i> outstanding fire has to be consumed immediately by the next ingredient.</li>
         <li>Mors is volatile. If you have any mors, your next ingredient must consume some mors.</li>
       </ul>
+      <svg viewBox="0 0 61 10">
+        <SvgAtoms atoms={{ water: 1, fire: 1, earth: 1, air: 1, vitae: 1, mors: 1, salt: 1 }} />
+      </svg>
     </div>
   )
 }

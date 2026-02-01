@@ -31,7 +31,7 @@ export default function SvgAtoms(props: SvgAtomsProps) {
     },
     className,
     imageSize = 10,
-    stride = imageSize - 1.5,
+    stride = imageSize * 0.85,
     x = 0,
     y = 0,
     alignRight = false,

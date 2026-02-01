@@ -9,3 +9,9 @@
   width: 100%;
   max-width: 750px;
 }
+
+.Explanation svg {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}

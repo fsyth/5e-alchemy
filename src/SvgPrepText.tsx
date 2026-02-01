@@ -1,5 +1,5 @@
-import SvgBar from "./SvgBar"
-import SvgTextArea from "./SvgTextArea"
+import SvgBar from './SvgBar'
+import SvgTextArea from './SvgTextArea'
 
 export type SvgPrepTextProps = Readonly<{
   prep: string,

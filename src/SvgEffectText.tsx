@@ -1,7 +1,7 @@
-import SvgBar from "./SvgBar"
-import SvgCornerCircles from "./SvgCornerCircles"
-import SvgOrnateBar from "./SvgOrnateBar"
-import SvgTextArea from "./SvgTextArea"
+import SvgBar from './SvgBar'
+import SvgCornerCircles from './SvgCornerCircles'
+import SvgOrnateBar from './SvgOrnateBar'
+import SvgTextArea from './SvgTextArea'
 
 import parchmentSrc from './assets/textures/parchment.jpg'
 

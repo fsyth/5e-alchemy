@@ -1,8 +1,8 @@
-import type { Ingredient } from './data/ingredients'
-
 import SvgEffectText from './SvgEffectText'
 import SvgNamePlate from './SvgNamePlate'
 import SvgPrepText from './SvgPrepText'
+
+import type { Ingredient } from './data/ingredients'
 
 import './IngredientCard.css'
 

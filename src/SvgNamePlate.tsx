@@ -1,10 +1,10 @@
-import type { Atoms } from "./data/ingredients"
+import SvgAtoms from './SvgAtoms'
+import SvgScales from './SvgScales'
+import SvgTextArea from './SvgTextArea'
 
-import SvgAtoms from "./SvgAtoms"
-import SvgTextArea from "./SvgTextArea"
+import type { Atoms } from './data/ingredients'
 
 import parchmentSrc from './assets/textures/parchment.jpg'
-import SvgScales from "./SvgScales"
 
 export type SvgNamePlateProps = Readonly<{
   name: string,
